@@ -65,7 +65,12 @@ export default function QuoteSection() {
 
   // fresh random batch on every mount / reload
   useEffect(() => {
-    fetchBatch(randomSkip());
+    // deferred to a microtask so the state update inside fetchBatch
+    // doesn't run synchronously within the effect body (avoids the
+    // react-hooks/set-state-in-effect cascading-render warning)
+    queueMicrotask(() => {
+      fetchBatch(randomSkip());
+    });
   }, [fetchBatch]);
 
   const handlePrev = () => {
