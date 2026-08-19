@@ -1,15 +1,16 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Flame, Menu, X, Zap, Trophy } from "lucide-react";
+import { Flame, Menu, X, Trophy } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 /**
  * GamifiedNavbar
  * ----------------
  * Sticky navbar for ProgressHit matching the hero/footer theme —
- * glassmorphic dark bar that solidifies on scroll, Link level badge
- * for logged-in users, and Link punchy CTA. Includes Link mobile menu.
+ * glassmorphic dark bar (always visible, solidifies further on scroll),
+ * a level badge for logged-in users, and a punchy CTA. Includes a mobile menu.
  *
  * Usage:
  *   import Navbar from "@/components/Navbar";
@@ -17,6 +18,9 @@ import Link from "next/link";
  *
  * Set `isLoggedIn` from your auth session (Better Auth) to swap
  * between the marketing CTA and the in-app streak/level pill.
+ *
+ * Logo: place your file at /public/logo.png — do NOT import it,
+ * next/image reads public assets directly via a string path.
  */
 
 const NAV_LINKS = [
@@ -42,17 +46,23 @@ export default function GamifiedNavbar({
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
+      className={`sticky top-0 z-50 w-full border-b transition-all duration-300 ${
         scrolled
-          ? "border-b border-white/10 bg-[#1A0B26]/80 backdrop-blur-md"
-          : "border-b border-transparent bg-transparent"
+          ? "border-white/10 bg-[#1A0B26]/80 backdrop-blur-md"
+          : "border-white/5 bg-[#1A0B26]/40 backdrop-blur-sm"
       }`}
     >
       <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 text-white">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-linear-to-br from-[#38E1C6] to-[#1D9E75] text-[#04342C]">
-            <Zap className="h-4 w-4" strokeWidth={2.5} />
+          <span className="relative flex h-8 w-8 items-center justify-center overflow-hidden rounded-lg">
+            <Image
+              src="/logo.png"
+              alt="ProgressHit logo"
+              width={20}
+              height={20}
+              className="object-contain"
+            />
           </span>
           <span className="text-base font-extrabold tracking-tight">
             ProgressHit
