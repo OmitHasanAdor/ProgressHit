@@ -9,8 +9,9 @@ import Image from "next/image";
  * GamifiedNavbar
  * ----------------
  * Sticky navbar for ProgressHit matching the hero/footer theme —
- * glassmorphic dark bar (always visible, solidifies further on scroll),
- * a level badge for logged-in users, and a punchy CTA. Includes a mobile menu.
+ * always uses the same dark violet-to-magenta gradient family as the
+ * hero (no gray/washed-out blend), solidifying further on scroll.
+ * Includes a level badge for logged-in users and a mobile menu.
  *
  * Usage:
  *   import Navbar from "@/components/Navbar";
@@ -26,7 +27,7 @@ import Image from "next/image";
 const NAV_LINKS = [
   { label: "Features", href: "#features" },
   { label: "How it works", href: "#how-it-works" },
-  { label: "Pricing", href: "/pricing" },
+  { label: "Quotes", href: "/quotes" },
 ];
 
 export default function GamifiedNavbar({
@@ -48,14 +49,14 @@ export default function GamifiedNavbar({
     <header
       className={`sticky top-0 z-50 w-full border-b transition-all duration-300 ${
         scrolled
-          ? "border-white/10 bg-[#1A0B26]/80 backdrop-blur-md"
-          : "border-white/5 bg-[#1A0B26]/40 backdrop-blur-sm"
+          ? "border-white/10 bg-gradient-to-r from-[#1A0B26] via-[#2B0F30] to-[#1A0B26] shadow-lg shadow-black/20 backdrop-blur-md"
+          : "border-white/5 bg-gradient-to-r from-[#1A0B26]/95 via-[#2B0F30]/95 to-[#1A0B26]/95 backdrop-blur-md"
       }`}
     >
       <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 text-white">
-          <span className="relative flex h-8 w-8 items-center justify-center overflow-hidden rounded-lg">
+          <span className="relative flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white p-1.5">
             <Image
               src="/logo.png"
               alt="ProgressHit logo"
@@ -94,7 +95,7 @@ export default function GamifiedNavbar({
               </div>
               <Link
                 href="/dashboard"
-                className="rounded-full bg-linear-to-r from-[#38E1C6] to-[#1D9E75] px-4 py-2 text-sm font-bold text-[#04342C] transition-transform duration-200 hover:-translate-y-0.5"
+                className="rounded-full bg-gradient-to-r from-[#38E1C6] to-[#1D9E75] px-4 py-2 text-sm font-bold text-[#04342C] transition-transform duration-200 hover:-translate-y-0.5"
               >
                 Dashboard
               </Link>
@@ -109,7 +110,7 @@ export default function GamifiedNavbar({
               </Link>
               <Link
                 href="/signup"
-                className="group relative inline-flex items-center gap-1.5 rounded-full bg-linear-to-r from-[#38E1C6] to-[#1D9E75] px-4 py-2 text-sm font-bold text-[#04342C] transition-transform duration-200 hover:-translate-y-0.5"
+                className="group relative inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-[#38E1C6] to-[#1D9E75] px-4 py-2 text-sm font-bold text-[#04342C] transition-transform duration-200 hover:-translate-y-0.5"
               >
                 Start free
                 <span className="absolute -right-1 -top-1 flex h-3 w-3">
@@ -134,7 +135,7 @@ export default function GamifiedNavbar({
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="border-t border-white/10 bg-[#1A0B26]/95 px-6 py-4 backdrop-blur-md sm:hidden">
+        <div className="border-t border-white/10 bg-gradient-to-b from-[#1A0B26] to-[#2B0F30] px-6 py-4 backdrop-blur-md sm:hidden">
           <div className="flex flex-col gap-4">
             {NAV_LINKS.map((link) => (
               <Link
@@ -151,7 +152,7 @@ export default function GamifiedNavbar({
               {isLoggedIn ? (
                 <Link
                   href="/dashboard"
-                  className="rounded-full bg-linear-to-r from-[#38E1C6] to-[#1D9E75] px-4 py-2.5 text-center text-sm font-bold text-[#04342C]"
+                  className="rounded-full bg-gradient-to-r from-[#38E1C6] to-[#1D9E75] px-4 py-2.5 text-center text-sm font-bold text-[#04342C]"
                 >
                   Dashboard
                 </Link>
@@ -162,7 +163,7 @@ export default function GamifiedNavbar({
                   </Link>
                   <Link
                     href="/signup"
-                    className="rounded-full bg-linear-to-r from-[#38E1C6] to-[#1D9E75] px-4 py-2.5 text-center text-sm font-bold text-[#04342C]"
+                    className="rounded-full bg-gradient-to-r from-[#38E1C6] to-[#1D9E75] px-4 py-2.5 text-center text-sm font-bold text-[#04342C]"
                   >
                     Start free
                   </Link>
