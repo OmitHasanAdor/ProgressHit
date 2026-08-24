@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import SignInForm from "./SignInForm";
+import SignUpForm from "./SignUpForm";
+
 
 /**
- * app/login/page.tsx
+ * app/signup/page.tsx
  * ---------------------
  * Server component. Owns the route's metadata (SEO/social preview)
  * and renders the client-side form component. No "use client" here —
@@ -10,12 +11,12 @@ import SignInForm from "./SignInForm";
  */
 
 export const metadata: Metadata = {
-  title: "Log in — ProgressHit",
+  title: "Sign up — ProgressHit",
   description:
-    "Log in to ProgressHit to pick up your goals, tasks, and streaks right where you left off.",
+    "Create your ProgressHit account and start turning your goals into progress you can see.",
   openGraph: {
-    title: "Log in — ProgressHit",
-    description: "Keep the streak going. Log in to ProgressHit.",
+    title: "Sign up — ProgressHit",
+    description: "Start your quest. Create your free ProgressHit account.",
     images: ["/og-image.png"],
   },
   robots: {
@@ -24,6 +25,6 @@ export const metadata: Metadata = {
   },
 };
 
-export default function LoginPage() {
-  return <SignInForm />;
+export default function SignUpPage() {
+  return <SignUpForm />;
 }
