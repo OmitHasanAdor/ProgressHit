@@ -97,7 +97,7 @@ export default function SignUpForm() {
   }
 
   return (
-    <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-b from-[#1A0B26] via-[#3D1030] to-[#241033] px-4 py-12">
+    <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-linear-to-b from-[#1A0B26] via-[#3D1030] to-[#241033] px-4 py-12">
       {/* ambient glow, same family as rest of the app */}
       <div className="pointer-events-none absolute -top-16 right-1/4 h-72 w-72 rounded-full bg-[#38E1C6] opacity-10 blur-3xl" />
       <div className="pointer-events-none absolute bottom-0 left-1/5 h-64 w-64 rounded-full bg-[#FFD34D] opacity-10 blur-3xl" />
@@ -253,7 +253,7 @@ export default function SignUpForm() {
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="w-full gap-2 bg-gradient-to-r from-[#38E1C6] to-[#1D9E75] font-bold text-[#04342C] hover:opacity-90"
+              className="w-full gap-2 bg-linear-to-r from-[#38E1C6] to-[#1D9E75] font-bold text-[#04342C] hover:opacity-90"
             >
               {isSubmitting ? (
                 <>
