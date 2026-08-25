@@ -103,7 +103,7 @@ export default function GamifiedNavbar({
           ) : (
             <>
               <Link
-                href="/login"
+                href="/signin"
                 className="text-sm font-medium text-white/70 transition-colors hover:text-white"
               >
                 Log in
@@ -158,7 +158,7 @@ export default function GamifiedNavbar({
                 </Link>
               ) : (
                 <>
-                  <Link href="/login" className="text-sm font-medium text-white/80">
+                  <Link href="/signin" className="text-sm font-medium text-white/80">
                     Log in
                   </Link>
                   <Link
