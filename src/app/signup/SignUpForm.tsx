@@ -281,7 +281,7 @@ export default function SignUpForm() {
 
         <p className="mt-6 text-center text-sm text-white/60">
           Already on your quest?{" "}
-          <Link href="/login" className="font-semibold text-[#38E1C6] hover:underline">
+          <Link href="/signin" className="font-semibold text-[#38E1C6] hover:underline">
             Log in
           </Link>
         </p>

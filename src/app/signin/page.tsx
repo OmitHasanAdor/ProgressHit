@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import SignInForm from "./SignInForm";
 
 /**
- * app/login/page.tsx
+ * app/signin/page.tsx
  * ---------------------
  * Server component. Owns the route's metadata (SEO/social preview)
  * and renders the client-side form component. No "use client" here —
@@ -24,6 +24,6 @@ export const metadata: Metadata = {
   },
 };
 
-export default function LoginPage() {
+export default function signinPage() {
   return <SignInForm />;
 }

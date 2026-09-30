@@ -25,7 +25,7 @@
 
 ## Features
 
-1. **Secure Authentication:** User registration, login, logout, and session management powered by Better Auth.
+1. **Secure Authentication:** User registration, signin, logout, and session management powered by Better Auth.
 
 2. **Goal Management:** Users can create, update, delete, and manage their personal goals and targets.
 
@@ -65,7 +65,7 @@ ProgressHit/
 │   ├── dashboard/
 │   ├── goals/
 │   ├── tasks/
-│   ├── login/
+│   ├── signin/
 │   └── register/
 ├── components/
 │   ├── ui/

@@ -22,9 +22,9 @@ import { authClient } from "@/lib/auth-client";
 /**
  * SignInForm
  * ------------
- * Client component. All interactivity for the login screen lives here —
+ * Client component. All interactivity for the signin screen lives here —
  * form state, validation, and the Better Auth calls. Rendered by the
- * server component at app/login/page.tsx, which owns the route metadata.
+ * server component at app/signin/page.tsx, which owns the route metadata.
  *
  * Requires: react-hook-form, zod, @hookform/resolvers, sonner, react-icons
  */
