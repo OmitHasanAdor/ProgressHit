@@ -102,7 +102,7 @@ Prisma provides type-safe database queries and makes it easier to manage the app
 
 ---
 
-## 🔐 Authentication
+##  Authentication
 
 Authentication is handled using **Better Auth**, providing secure user authentication and session management.
 
@@ -219,7 +219,7 @@ http://localhost:3000
 
 **Omit Hasan Ador**
 
-Frontend-Focused MERN Stack Developer
+Frontend-Focused Full-Stack Developer
 
 * GitHub: [OmitHasanAdor](https://github.com/OmitHasanAdor)
 
